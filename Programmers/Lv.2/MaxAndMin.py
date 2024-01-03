@@ -1,0 +1,5 @@
+### 2024.01.03 (Wed)
+def solution(s):
+    lst = list(map(int, s.split()))
+    answer = str(min(lst)) + " " + str(max(lst))
+    return answer
