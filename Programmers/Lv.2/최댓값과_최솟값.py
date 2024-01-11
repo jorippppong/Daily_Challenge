@@ -1,4 +1,5 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12939
+
 def solution(s):
     lst = list(map(int, s.split()))
     answer = str(min(lst)) + " " + str(max(lst))
