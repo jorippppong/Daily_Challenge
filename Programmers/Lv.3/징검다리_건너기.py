@@ -21,6 +21,6 @@ def solution(stones, k):
         if count < k:
             left = mid +1  # 인원 늘려도 괜찮
         else:
-            answer = mid
+            # answer = mid  # 여기서 효율성 12번 실패
             right = mid -1  # 인원 줄여야 함
-    return answer
+    return left  # ...???
