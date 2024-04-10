@@ -27,4 +27,4 @@ while True:
                 if cost < weight[nextX][nextY]:
                     weight[nextX][nextY] = cost
                     heapq.heappush(hq, (cost, nextX, nextY))
-    print("Problem %d: %d" %count %weight[n-1][n-1])
+    print("Problem %d: %d" %(count, weight[n-1][n-1]))
