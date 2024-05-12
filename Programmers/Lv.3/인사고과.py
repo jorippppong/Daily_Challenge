@@ -1,5 +1,19 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/152995
 
+def solution(scores):
+    wanHo = scores[0]
+    scores.sort(key = lambda x : (-x[0], x[1]))
+    maxNum = scores[0][1]
+    rank = 1
+    for a, b in scores:
+        if b < maxNum:
+            if a == wanHo[0] and b == wanHo[1]:
+                return -1 
+        else: 
+            if a+b > wanHo[0]+wanHo[1]:
+                rank += 1
+        maxNum = max(maxNum, b)
+    return rank
 
 """
 개삽질한 잘못된 코드...ㅜㅜ 내 한시간 반....
