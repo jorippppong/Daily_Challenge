@@ -33,28 +33,23 @@ def solution(maps):
 def solution2(maps):
     row, col = len(maps), len(maps[0])
     dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]  # 동남서북
-    visited = [[False]*col for _ in range(row)]
-    answer = math.inf
-    blocks = 1
+    dp = [[math.inf]*col for _ in range(row)]
     
     def canGo(x, y):
-        return 0<=x<row and 0<=y<col and maps[x][y] and not visited[x][y]
+        return 0<=x<row and 0<=y<col and maps[x][y]
     
-    def move(currX, currY):
-        nonlocal answer, blocks
+    def move(currX, currY, blocks):
         if currX==row-1 and currY ==col-1:
-            answer = min(answer, blocks)
+            dp[row-1][col-1] = min(dp[row-1][col-1], blocks+1)
             return
         for i in range(4):
             nextX, nextY = currX + dx[i], currY + dy[i]
             if canGo(nextX, nextY):
-                visited[nextX][nextY] = True
-                blocks += 1
-                move(nextX, nextY)
-                visited[nextX][nextY] = False
-                blocks -= 1
+                if dp[currX][currY]+1 < dp[nextX][nextY]:
+                    dp[nextX][nextY] = dp[currX][currY]+1
+                    move(nextX, nextY, dp[nextX][nextY])
         return 
     
-    visited[0][0] = True
-    move(0, 0)
-    return -1 if answer == math.inf else answer
+    dp[0][0] = 1
+    move(0, 0, 1)
+    return -1 if dp[row-1][col-1] == math.inf else dp[row-1][col-1]
