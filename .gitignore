@@ -1,1 +1,5 @@
-BOJ/.vscode/
+.vscode/
+.DS_Store
+
+*.class
+*.json
