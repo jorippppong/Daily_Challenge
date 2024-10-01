@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/2504
+
 import java.util.*;
 
 public class BOJ2504 {
