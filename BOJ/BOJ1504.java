@@ -65,14 +65,14 @@ public class BOJ1504 {
         }
         return cost;
     }
-}
 
-class Pair{
-    int cost;
-    int node;
-
-    Pair(int cost, int node){
-        this.cost = cost;
-        this.node = node;
+    static class Pair{
+        int cost;
+        int node;
+    
+        Pair(int cost, int node){
+            this.cost = cost;
+            this.node = node;
+        }
     }
 }

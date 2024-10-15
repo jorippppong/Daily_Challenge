@@ -6,6 +6,7 @@ public class BOJ1753 {
     static int MAX_VALUE = Integer.MAX_VALUE;
     static ArrayList<Pair>[] arr;
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int v = sc.nextInt();
@@ -61,14 +62,14 @@ public class BOJ1753 {
         return cost;
     }
 
-}
-
-class Pair{
-    int cost;
-    int node;
-
-    Pair(int cost, int node){
-        this.cost = cost;
-        this.node = node;
+    static class Pair{
+        int cost;
+        int node;
+    
+        Pair(int cost, int node){
+            this.cost = cost;
+            this.node = node;
+        }
     }
+
 }
