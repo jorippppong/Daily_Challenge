@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/18353
+
 n = int(input())
 lst = list(map(int, input().split()))
 dp = [1] * n

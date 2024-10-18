@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/15663
 
+package silver.java;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

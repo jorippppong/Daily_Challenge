@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/1149
 
+package silver.java;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

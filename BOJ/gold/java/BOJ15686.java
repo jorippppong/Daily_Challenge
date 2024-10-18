@@ -1,16 +1,8 @@
 // https://www.acmicpc.net/problem/15686
 
+package gold.java;
+
 import java.util.*;
-
-class Pair{
-    int x;
-    int y;
-
-    Pair(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
-}
 
 public class BOJ15686 {
     static int minValue = Integer.MAX_VALUE;
@@ -79,5 +71,15 @@ public class BOJ15686 {
 
         }
         return result;
+    }
+
+    static class Pair{
+        int x;
+        int y;
+    
+        Pair(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
     }
 }

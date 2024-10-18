@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/16953
 
+package silver.java;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;

@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/1987
 
+package gold.java;
+
 import java.util.HashSet;
 import java.util.Scanner;
 

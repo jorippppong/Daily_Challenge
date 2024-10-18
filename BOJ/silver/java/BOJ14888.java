@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/14888
 
+package silver.java;
+
 import java.util.*;
 
 public class BOJ14888{

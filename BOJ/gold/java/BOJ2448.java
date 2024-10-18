@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/2448
 
+package gold.java;
+
 import java.util.Scanner;
 
 public class BOJ2448 {

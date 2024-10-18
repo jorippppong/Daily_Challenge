@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/5639
 
+package gold.java;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

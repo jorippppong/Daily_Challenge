@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/1932
 
+package silver.java;
+
 import java.util.Scanner;
 
 public class BOJ1932 {

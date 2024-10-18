@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/1038
+
 # 중복 없이, 순서 상관 O
 def permutation(lst, n, r):
     def choose(cnt):

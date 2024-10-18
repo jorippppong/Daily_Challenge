@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/1753
 
+package gold.java;
+
 import java.util.*;
 
 public class BOJ1753 {
