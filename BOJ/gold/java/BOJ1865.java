@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/1865
 
-package gold.java;
+package boj.gold.java;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

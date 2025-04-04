@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package leetcode.easy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ O(n)
 배열, 반복문
 */
 
-public class LC_228 {
+public class LC228 {
     class Solution {
         public List<String> summaryRanges(int[] nums) {
             List<String> ans = new ArrayList<>();

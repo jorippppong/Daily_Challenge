@@ -1,4 +1,4 @@
-package LeetCode.Hard;
+package leetcode.hard;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -14,7 +14,7 @@ O(n)
 BFS, Queue
 */
 
-public class LC_112 {
+public class LC112 {
     
     //Definition for a binary tree node.
     class TreeNode {

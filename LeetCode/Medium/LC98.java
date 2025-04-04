@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 : 
@@ -13,7 +13,7 @@ O(n)
 DFS, 재귀
 */
 
-public class LC_98 {
+public class LC98 {
     
     //Definition for a binary tree node.
     class TreeNode {

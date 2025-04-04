@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/1991
 
-package silver.java;
+package boj.silver.java;
 
 import java.util.Scanner;
 import java.util.Stack;

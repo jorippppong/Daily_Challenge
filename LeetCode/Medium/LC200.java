@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -14,7 +14,7 @@ O(nm)
 BFS, Queue
 */
 
-public class LC_200 {
+public class LC200 {
     class Solution {
         public int numIslands(char[][] grid) {
             int ans = 0;

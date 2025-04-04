@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 : 
@@ -12,7 +12,7 @@ O(n)
 DP
 */
 
-public class LC_238 {
+public class LC238 {
     class Solution {
         public int[] productExceptSelf(int[] nums) {
             int len = nums.length;

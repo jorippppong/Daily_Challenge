@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package leetcode.easy;
 
 /*
 1. 아이디어 : 
@@ -11,7 +11,7 @@ O(n)
 DP, 반복문
 */
 
-public class LC_70 {
+public class LC70 {
     class Solution {
         public int climbStairs(int n) {
             int[] dp = new int[n+1];

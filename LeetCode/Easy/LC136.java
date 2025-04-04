@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package leetcode.easy;
 
 /*
 1. 아이디어 : 
@@ -12,7 +12,7 @@ O(n)
 Bit Manipulation
 */
 
-public class LC_136 {
+public class LC136 {
     class Solution {
         public int singleNumber(int[] nums) {
             int ans = 0;

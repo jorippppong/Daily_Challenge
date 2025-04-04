@@ -1,9 +1,9 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC_54 {
+public class LC54 {
     class Solution {
         public List<Integer> spiralOrder(int[][] matrix) {
             List<Integer> ans = new ArrayList<>();

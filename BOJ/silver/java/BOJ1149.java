@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/1149
 
-package silver.java;
+package boj.silver.java;
 
 import java.util.Arrays;
 import java.util.Scanner;

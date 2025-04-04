@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/11053
 
-package silver.java;
+package boj.silver.java;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

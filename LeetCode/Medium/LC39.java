@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ O(n^t)
 Backtracking, 리스트
 */
 
-public class LC_39 {
+public class LC39 {
     class Solution {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> cand = new ArrayList<>();

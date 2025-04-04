@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +18,7 @@ O(3^n) ~ O(4^n)
 Backtracking, Map
 */
 
-public class LC_17 {
+public class LC17 {
     class Solution {
         private List<String> ans = new ArrayList<>();
 

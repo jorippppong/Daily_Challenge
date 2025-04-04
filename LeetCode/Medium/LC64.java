@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 : 
@@ -11,7 +11,7 @@ O(nm)
 DP, 반복문
 */
 
-public class LC_64 {
+public class LC64 {
     class Solution {
         public int minPathSum(int[][] grid) {
             int row = grid.length, col = grid[0].length;

@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/16953
 
-package silver.java;
+package boj.silver.java;
 
 import java.util.LinkedList;
 import java.util.Queue;

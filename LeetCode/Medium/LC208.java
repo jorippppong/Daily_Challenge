@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.HashMap;
 
@@ -17,7 +17,7 @@ delete : O(L)
 Trie 알고리즘, HashMap 사용해서 child 알파벳들을 저장 & 탐색한다.
 */
 
-public class LC_208 {
+public class LC208 {
 
     class Trie {
         Node head;

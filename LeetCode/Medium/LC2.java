@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 : 
@@ -12,7 +12,7 @@ O(n)
 LinkedList, 반복문
 */
 
-public class LC_2 {
+public class LC2 {
     // Definition for singly-linked list.
     class ListNode {
         int val;

@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 :
@@ -14,7 +14,7 @@ O(n)
 투 포인터
 */
 
-public class LC_80 {
+public class LC80 {
     class Solution {
         public int removeDuplicates(int[] nums) {
             boolean twice = false;

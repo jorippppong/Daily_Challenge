@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package leetcode.easy;
 
 /*
 1. 아이디어 : 
@@ -14,7 +14,7 @@ O(n)
 */
 
 
-public class LC_26 {
+public class LC26 {
     class Solution {
         public int removeDuplicates(int[] nums) {
             int j = 0;

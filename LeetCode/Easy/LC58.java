@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package leetcode.easy;
 
 /*
 1. 아이디어 : 
@@ -11,7 +11,7 @@ O(n)
 반복문
 */
 
-public class LC_58 {
+public class LC58 {
     class Solution {
         public int lengthOfLastWord(String s) {
             s = s.trim();

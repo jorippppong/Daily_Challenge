@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 : 
@@ -14,7 +14,7 @@ O(n)
 DP, 반복문
 */
 
-public class LC_198 {
+public class LC198 {
     class Solution {
         public int rob(int[] nums) {
             int len = nums.length;

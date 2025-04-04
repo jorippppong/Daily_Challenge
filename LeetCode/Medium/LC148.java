@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 /*
 1. 아이디어 : 
@@ -13,7 +13,7 @@ O(nlogn)
 divide and conquer, two pointer
 */
 
-public class LC_148 {
+public class LC148 {
     
     // Definition for singly-linked list.
     class ListNode {

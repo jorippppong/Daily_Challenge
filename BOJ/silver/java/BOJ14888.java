@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/14888
 
-package silver.java;
+package boj.silver.java;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package LeetCode.Easy;
+package leetcode.easy;
 
 /*
 1. 아이디어 : 
@@ -13,7 +13,7 @@ O(n)
 투 포인터
 */
 
-public class LC_27 {
+public class LC27 {
     class Solution {
         public int removeElement(int[] nums, int val) {
             int k = 0;

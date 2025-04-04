@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ O(n^2)
 리스트 / DP (반복문)
 */
 
-public class LC_120 {
+public class LC120 {
     class Solution {
         public int minimumTotal(List<List<Integer>> triangle) {
             List<Integer> prevTri = triangle.get(0);

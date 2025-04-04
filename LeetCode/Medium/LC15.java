@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ O(n^2)
 배열, two pointer 
 */
 
-public class LC_15 {
+public class LC15 {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
             Arrays.sort(nums);

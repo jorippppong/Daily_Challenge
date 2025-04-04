@@ -1,4 +1,4 @@
-package LeetCode.Hard;
+package leetcode.hard;
 
 /*
 1. 아이디어 : 
@@ -13,7 +13,7 @@ O(nlogk)
 divide and conquer, two pointer
 */
 
-public class LC_23 {
+public class LC23 {
     
     //Definition for singly-linked list.
     class ListNode {

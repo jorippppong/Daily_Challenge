@@ -1,4 +1,4 @@
-package LeetCode.Hard;
+package leetcode.hard;
 
 import java.util.Stack;
 
@@ -14,7 +14,7 @@ O(n)
 Stack
 */
 
-public class LC_224 {
+public class LC224 {
     class Solution {
         public int calculate(String s) {
             s = s.replace(" ", "");

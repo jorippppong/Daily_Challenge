@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/1987
 
-package gold.java;
+package boj.gold.java;
 
 import java.util.HashSet;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/15663
 
-package silver.java;
+package boj.silver.java;
 
 import java.util.*;
 import java.util.stream.Collectors;

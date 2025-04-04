@@ -1,4 +1,4 @@
-package LeetCode.Medium;
+package leetcode.medium;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -16,7 +16,7 @@ O(nm)
 BFS
 */
 
-public class LC_130 {
+public class LC130 {
     class Solution {
         public void solve(char[][] board) {
             int row = board.length;
