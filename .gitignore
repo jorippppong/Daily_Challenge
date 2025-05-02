@@ -1,5 +1,7 @@
 .vscode/
+.idea/
 .DS_Store
 
 *.class
 *.json
+*.iml
