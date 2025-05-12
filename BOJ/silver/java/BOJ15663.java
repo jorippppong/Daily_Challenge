@@ -1,50 +1,46 @@
-// https://www.acmicpc.net/problem/15663
-
 package boj.silver.java;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class BOJ15663 {
-    static int n;
-    static int m;
-    static int[] arr;
-    static boolean[] visited;
-    static Stack<Integer> stack = new Stack<>();
-    static HashSet<String> set = new HashSet<>();
+    private static int len;
+    private static final TreeMap<Integer, Integer> map = new TreeMap<>();
+    private static final List<Integer> ans = new ArrayList<>();
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
-        arr = new int[n];
-        visited = new boolean[n];
-        for(int i =0; i<n; i++){
-            arr[i] = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int n = Integer.parseInt(st.nextToken());
+        len = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine(), " ");
+        for (int i = 0; i < n; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        Arrays.sort(arr);
 
-        perm(0);
-
-        sc.close();
+        backtracking(0);
     }
 
-    public static void perm(int size){
-        if(size == m){
-            String result = stack.stream().map(String::valueOf).collect(Collectors.joining(" "));
-            if(!set.contains(result)){
-                set.add(result);
-                System.out.println(result);
-            }
+    private static void backtracking(int cnt) {
+        if (cnt == len) {
+            String str = ans.stream().map(String::valueOf).collect(Collectors.joining(" "));
+            System.out.println(str);
             return;
         }
-        for(int i=0; i<n; i++){
-            if(visited[i] == false){
-                stack.push(arr[i]);
-                visited[i] = true;
-                perm(size+1);
-                stack.pop();
-                visited[i] = false;
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int key = entry.getKey();
+            int value = entry.getValue();
+            if (value > 0) {
+                ans.add(key);
+                map.put(key, value - 1);
+                backtracking(cnt + 1);
+                ans.remove(ans.size() - 1);
+                map.put(key, map.get(key) + 1);
             }
         }
     }

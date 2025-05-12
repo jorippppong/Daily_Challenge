@@ -1,52 +1,48 @@
-// https://www.acmicpc.net/problem/15666
-
 package boj.silver.java;
 
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class BOJ15666 {
-    static int m;
-    static int depth;
-    static Integer[] arr;
-    static Stack<Integer> stack = new Stack<>();
+    private static int len;
+    private static final TreeSet<Integer> set = new TreeSet<>();
+    private static final List<Integer> ans = new ArrayList<>();
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        m = sc.nextInt();
-        depth = sc.nextInt();
-        
-        // set -> list
-        Set<Integer> set = new HashSet<>();
-        for(int i=0; i<m; i++){
-            set.add(sc.nextInt());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int n = Integer.parseInt(st.nextToken());
+        len = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine(), " ");
+        while (n-- > 0) {
+            set.add(Integer.parseInt(st.nextToken()));
         }
-        arr = set.toArray(new Integer[0]);
-        Arrays.sort(arr);  // 오름차순 정렬
 
-        comb(0);
-
-        sc.close();
+        backtracking();
     }
 
-    // 조합
-    public static void comb(int curr){
-        if(curr == depth){
-            String str = stack.stream().map(String::valueOf).collect(Collectors.joining(" "));
+    private static void backtracking() {
+        int cnt = ans.size();
+        if (cnt == len) {
+            String str = ans.stream().map(String::valueOf).collect(Collectors.joining(" "));
             System.out.println(str);
             return;
         }
-        // 인덱스 찾고, 해당 인덱스 이상
-        int idx;
-        if(stack.isEmpty()){
-            idx = 0;
-        } else{
-            idx = Arrays.asList(arr).indexOf(stack.peek());
-        }
-        for(int i = idx; i<arr.length; i++){
-            stack.push(arr[i]);
-            comb(curr+1);
-            stack.pop();
+
+        int prev = ans.isEmpty() ? 0 : ans.get(cnt - 1);
+        for (int num : set) {
+            if (num >= prev) {
+                ans.add(num);
+                backtracking();
+                ans.remove(cnt);
+            }
         }
     }
 }

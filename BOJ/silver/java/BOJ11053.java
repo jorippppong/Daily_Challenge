@@ -1,35 +1,33 @@
-// https://www.acmicpc.net/problem/11053
-
 package boj.silver.java;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class BOJ11053 {
-    public static void main(String[] args) throws Exception{
-        // 입력
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        // DP
         int[] dp = new int[n];
-        Arrays.fill(dp, 1);
-        for(int i=0; i<n; i++){
-            int maxLen = 0;
-            for(int j=0; j<i; j++){
-                if(arr[i] > arr[j]){
-                    maxLen = Math.max(maxLen, dp[j]);
+        dp[0] = 1;
+        int ans = 1;
+        for (int i = 1; i < n; i++) {
+            int len = 0;
+            for (int j = i - 1; j >= 0; j--) {
+                if (arr[j] < arr[i]) {
+                    len = Math.max(len, dp[j]);
                 }
             }
-            dp[i] = maxLen + 1;
+            dp[i] = len + 1;
+            ans = Math.max(ans, dp[i]);
         }
-        System.out.println(Arrays.stream(dp).max().getAsInt());   
+        System.out.println(ans);
     }
 }
