@@ -1,6 +1,7 @@
 .vscode/
 .idea/
 out/
+!/out/
 .DS_Store
 
 *.class

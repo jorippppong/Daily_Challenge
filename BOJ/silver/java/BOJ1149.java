@@ -1,33 +1,36 @@
-// https://www.acmicpc.net/problem/1149
-
 package boj.silver.java;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class BOJ1149 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[][] color = new int[n][3]; // 빨, 초, 파
-        for(int i = 0; i<n; i++){
-            for(int j =0; j<3; j++){
-                color[i][j] = sc.nextInt();
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[][] arr = new int[n][3];
+        for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            for (int j = 0; j < 3; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        int[][] dp = new int[n][3];
-        for(int j =0; j<3; j++){
-            dp[0][j] = color[0][j];
+        // DP (최소 비용 저장)
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < 3; j++) {
+                int minNum = Integer.MAX_VALUE;
+                for (int k = 0; k < 3; k++) {
+                    if (j != k) {
+                        minNum = Math.min(minNum, arr[i - 1][k]);
+                    }
+                }
+                arr[i][j] += minNum;
+            }
         }
-        for(int i=1; i<n; i++){
-            dp[i][0] = Math.min(dp[i-1][1], dp[i-1][2]) + color[i][0];
-            dp[i][1] = Math.min(dp[i-1][0], dp[i-1][2]) + color[i][1];
-            dp[i][2] = Math.min(dp[i-1][0], dp[i-1][1]) + color[i][2];
-        }
-
-
-        System.out.println(Arrays.stream(dp[n-1]).min().getAsInt());
-        sc.close();
+        System.out.println(Arrays.stream(arr[n - 1]).min().getAsInt());
     }
 }

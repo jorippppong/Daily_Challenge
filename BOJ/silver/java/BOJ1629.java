@@ -1,36 +1,30 @@
-// https://www.acmicpc.net/problem/1629
-
 package boj.silver.java;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class BOJ1629 {
-    static long a;
-    static long b;
-    static long c;
+    private static long num;
+    private static long modi;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        a = sc.nextLong();
-        b = sc.nextLong();
-        c = sc.nextLong();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        num = Integer.parseInt(st.nextToken());
+        int cnt = Integer.parseInt(st.nextToken());
+        modi = Integer.parseInt(st.nextToken());
 
-        System.out.println(mod(b));
-
-        sc.close();
+        System.out.println(cal(cnt));
     }
 
-    // a^x 를 c로 나눈 나머지를 반환
-    static long mod(long x){
-        if(x == 1){
-            return a % c;
+    private static long cal(int cnt) {
+        if (cnt == 1) {
+            return num % modi;
         }
-        long num = 1;
-        if(x%2 != 0){
-            num *= a;
-        }
-        long result = mod(x/2);
-        result = (result * result) % c;
-        return (result * num) % c;
+        long half = cal(cnt / 2);
+        long ans = half * half % modi;
+        return cnt % 2 == 0 ? ans : ans * (num % modi) % modi;
     }
 }
