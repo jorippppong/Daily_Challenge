@@ -1,53 +1,48 @@
-// https://www.acmicpc.net/problem/13549
-
 package boj.gold.java;
 
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
 
 public class BOJ13549 {
-    static int[] value;
+    private static final int MIN_LOCATION = 0;
+    private static final int MAX_LOCATION = 100000;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int source = Integer.parseInt(st.nextToken());
+        int target = Integer.parseInt(st.nextToken());
 
-        value = new int[100001];
-        Arrays.fill(value, -1);
-
-        bfs(n, k);
-
-        sc.close();
-    }
-
-    // 가중치가 0이면 가장 앞으로 이동, 가중치가 1이면 가장 뒤로 이동
-    static void bfs(int n, int k){
-        LinkedList<Integer> queue = new LinkedList<>();
-        queue.addFirst(n);
-        value[n] = 0;
-
-        while(!queue.isEmpty()){
-            int position = queue.pollFirst();
-            if(position == k){
-                System.out.println(value[position]);
+        Set<Integer> set = new HashSet<>();
+        Deque<int[]> dq = new LinkedList<>();
+        dq.add(new int[]{source, 0}); // {위치, 시간}
+        set.add(source);
+        while (!dq.isEmpty()) {
+            int[] curr = dq.pollFirst();
+            int location = curr[0], sec = curr[1];
+            if (location == target) {
+                System.out.println(sec);
                 return;
             }
 
-            if(position*2 <= 100000 && value[position*2] == -1){
-                queue.addFirst(position*2);
-                value[position*2] = value[position];
+            int next = location * 2;
+            if (next >= MIN_LOCATION && next <= MAX_LOCATION && !set.contains(next)) {
+                dq.addFirst(new int[]{next, sec});
+                set.add(next);
             }
-            if(position-1 >= 0 && value[position-1] == -1){
-                queue.addLast(position-1);
-                value[position-1] = value[position] + 1;
+            next = location - 1;
+            if (next >= MIN_LOCATION && next <= MAX_LOCATION && !set.contains(next)) {
+                dq.add(new int[]{next, sec + 1});
+                set.add(next);
             }
-            if(position+1 <= 100000 && value[position+1] == -1){
-                queue.addLast(position+1);
-                value[position+1] = value[position] + 1;
+            next = location + 1;
+            if (next >= MIN_LOCATION && next <= MAX_LOCATION && !set.contains(next)) {
+                dq.add(new int[]{next, sec + 1});
+                set.add(next);
             }
         }
+
     }
 }
-
